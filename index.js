@@ -53,7 +53,7 @@ async function run(){
       // sob gula apoointmnt theke email $ date filter kore client site e dekhano
       app.get('/appointments', async(req, res) => {
         const email = req.query.email;
-        const date = new Date(req.query.date).toDateString();
+        const date = req.query.date;
         console.log(date);
         const query = {email: email, date: date };
         const cursor = appointmentsCollection.find(query);
